@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="box w-75 mx-auto m-5 p-5 text-white text-center">
+      <div id="box" class="box w-75 mx-auto m-5 p-5 text-white text-center d-block">
         <h1>Smart Login System</h1>
         <div id="login" class="login d-block">
           <input
@@ -57,6 +57,16 @@
             Sign Up
           </button>
           <p>You have an account? <a href=""  id="Sign_In">Sign In</a></p>
+        </div>
+      </div>
+      <div class="home-page vh-100 d-none" id="home">
+        <nav class="d-flex justify-content-between p-4  align-items-center shadow-lg">
+          <h4 class="text-uppercase text-white">smart login</h4>
+          <button id="logout" class="btn btn-outline-warning py-2 px-3 text-white">Logout</button>
+        </nav>
+        <div class="home h-75 d-flex justify-content-center" >
+          <div id="content" class="content w-50 text-center align-self-center">
+          </div>
         </div>
       </div>
     </div>
