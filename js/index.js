@@ -41,9 +41,30 @@ function signUp() {
     }
   }
 }
+function signIn() {
+  //   if (isEmpty() == true) {
+  //     var confMsg = document.getElementById("valid1");
+  //     confMsg.classList.replace("d-none", "d-block");
+  //   } else {}
+  if (isExist1() == true) {
+    window.location.href = "home.html";
+  } else {
+    var confMsg = document.getElementById("valid2");
+    confMsg.classList.replace("d-none", "d-block");
+  }
+}
 function isExist() {
   for (var i = 0; i < userInfo.length; i++) {
     if (userInfo[i].email == signupEmail.value) return true;
+  }
+}
+function isExist1() {
+  for (var i = 0; i < userInfo.length; i++) {
+    if (
+      userInfo[i].email == loginEmail.value &&
+      userInfo[i].pass == loginPass.value
+    )
+      return true;
   }
 }
 function isEmpty() {
@@ -56,6 +77,7 @@ function isEmpty() {
   else return false;
 }
 singupBtn.addEventListener("click", signUp);
+loginBtn.addEventListener("click", signIn);
 function clear() {
   signupName.value = null;
   signupEmail.value = null;
@@ -68,9 +90,9 @@ Sign_Up.addEventListener("click", function (e) {
   login.classList.replace("d-block", "d-none");
 });
 
-loginBtn.addEventListener("click", function () {
-  valedate1(this);
-});
+// loginBtn.addEventListener("click", function () {
+//   valedate1(this);
+// });
 function valedate1(e) {
   redex = {
     signupName: /^.{0,}$/i,
